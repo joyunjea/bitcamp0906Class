@@ -1,4 +1,4 @@
-package exam;
+package examperson;
 //3. main()메소드를 정의해봅시다.
 public class PersonMain {
 

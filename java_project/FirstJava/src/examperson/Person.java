@@ -1,4 +1,4 @@
-package exam;
+package examperson;
 //1.Person 이라는 클래스를 정의해봅시다.
 public class Person {
 	

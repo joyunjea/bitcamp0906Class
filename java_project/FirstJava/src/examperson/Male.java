@@ -1,4 +1,4 @@
-package exam;
+package examperson;
 //①각 클래스는 상속 받은 멤버 외에 추가적인 변수와 메소드를 추가해서 새로운 클래스를 정의해봅시다.
 public class Male extends Person{
 	
