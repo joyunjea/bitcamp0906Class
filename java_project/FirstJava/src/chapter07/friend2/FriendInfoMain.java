@@ -1,0 +1,46 @@
+package chapter07.friend2;
+
+import java.util.Calendar;
+import java.util.Scanner;
+
+public class FriendInfoMain {
+
+	public static void main(String[] args) {
+
+		FriendInfoHandler handler = new FriendInfoHandler();
+
+		Scanner sc = new Scanner(System.in);
+
+		while (true) {
+
+			System.out.println("##### 메뉴 선택 #####");
+			System.out.println(Menu.INSERT_HIGH+ " 고교 친구 정보 저장");
+			System.out.println(Menu.INSERT_UNIV+ " 대학 친구 저장");
+			System.out.println(Menu.SHOW_ALL+ " 전체 정보 출력");
+			System.out.println(Menu.SHOW_BASIC+ " 기본 정보 출력");
+			System.out.println(Menu.EXIT+ " 프로그램 종료");
+			System.out.println(" 메뉴 선택 >>");
+			
+			
+
+			int select = Integer.parseInt(sc.nextLine());
+			switch (select) {
+			case 1:
+			case 2:
+				handler.addFriend(select);
+				break;
+			case 3:
+				handler.showAllData();
+				break;
+			case 4:
+				handler.ShowAllSimpleData();
+				break;
+			case 5:
+				System.out.println("프로그램을 종료합니다.");
+				return;
+			}
+			
+		}
+		
+	}
+}

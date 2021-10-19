@@ -8,6 +8,8 @@ public class Ex06 {
 		String reversedStr = sb.reverse().toString();
 		System.out.println(reversedStr);
 		
+		
+		
 		String str1 = "ABCDEFGHIJKLMN";
 		char[] arr = str1.toCharArray();
 		char[] reversedArr = new char[arr.length];
@@ -17,8 +19,10 @@ public class Ex06 {
 		String reversedStr1 = new String(reversedArr);
 		System.out.println(reversedStr1);
 		
+		
+		
 		String str2 = "990929-1010123";
-		StringBuilder stringBuilder = new StringBuilder(str2);
-		System.out.println(stringBuilder.deleteCharAt(6));
+		StringBuilder sb1 = new StringBuilder(str2);
+		System.out.println(sb1.deleteCharAt(6));
 	}
 }
