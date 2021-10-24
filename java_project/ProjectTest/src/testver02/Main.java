@@ -26,12 +26,12 @@ public class Main {
 		Scanner sc = new Scanner(System.in);
 		
 		while(true) {
-			System.out.println("### 전화번호 관리 프로그램 ###");
-			System.out.println("1. 전화번호 등록");
-			System.out.println("2. 전화번호 검색(이름으로 검색)");
-			System.out.println("3. 전화번호 삭제(이름으로 검색)");
-			System.out.println("4. 전화번호 수정(이름으로 검색)");
-			System.out.println("5. 전화번호 전체 출력");
+			System.out.println("==연락처 관리 프로그램==");
+			System.out.println("1. 연락처 등록");
+			System.out.println("2. 연락처 검색(이름으로 검색)");
+			System.out.println("3. 연락처 삭제(이름으로 검색)");
+			System.out.println("4. 연락처 수정(이름으로 검색)");
+			System.out.println("5. 연락처 전체 출력");
 			System.out.println("6. 프로그램 종료");
 			System.out.println("메뉴 >>>>>>>>>>>>>>> ");
 			

@@ -41,6 +41,7 @@ public class SmartPhone {
 		//addContact(c);
 		
 		addContact(new Contact(name, phoneNumber, email, address, birthday, group));
+
 	}
 	
 	//전체 데이터 출력 : 배열은 반복문

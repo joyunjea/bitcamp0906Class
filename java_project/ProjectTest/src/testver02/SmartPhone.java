@@ -18,8 +18,8 @@ public class SmartPhone {
 
 	// 저장
 	public void insert() {
-		// 객체를 생성해서 add 메소드에 매개변수로 준다.
-		// add 메소드는 그 객체를 받아서 배열에 저장한다.
+		// 객체를 생성해서 addContact 메소드에 매개변수로 준다.
+		// addContact 메소드는 그 객체를 받아서 배열에 저장한다.
 
 		// 연락처 객체 하나를 생성해서 사용자로부터 정보를 받아서
 		// 연락처의 이름,이메일,전화번호... 로 설정.
@@ -43,16 +43,18 @@ public class SmartPhone {
 
 		// 생성된 연락처 c를 add에 매개변수로 준다.
 		// add 메소드는 c를 받아 배열에 저장한다.
-		add(c);
+		addContact(c);
+		System.out.println("연락처 등록이 완료되었습니다.");
 
 	}
 
 	// 추가
-	public void add(Contact abc) {
+	public void addContact(Contact contact) {
 		// 연락처 객체를 받아서 배열에 추가한다.
 		// contacts[//인덱스에] 할당 = // 받은 연락처를
-		contacts[cnt] = abc;
-		cnt = cnt + 1;
+		contacts[cnt++] = contact;
+		//contacts[cnt] = contact;
+		//cnt = cnt + 1;
 		// 저장하고 나서 cnt의 값을 1 증가.
 		// 그러면 다음에 추가되는 연락처는 0번이 아니라
 		// 1번 인덱스에 저장됨
@@ -62,6 +64,8 @@ public class SmartPhone {
 	// 출력
 
 	public void printAll() {
+		System.out.println("리스트를 출력합니다.("+cnt+"명)");
+		System.out.println("===========================");
 		// 배열 전체를 스캔하면서 각각의 연락처 정보를 출력합니다.
 		// 전체를 스캔하기 위해 for문 사용
 		for (int i = 0; i < cnt; i++) {
@@ -70,10 +74,14 @@ public class SmartPhone {
 			// 인덱스는 0부터 4까지(총 5명)
 			// 따라서 i는 0 부터 4까지 스캔
 
+            // 해당 배열 연락처의 이름만 출력
+			contacts[i].showList();
 //			String userInfo = contacts[i].toString();
 //			System.out.println(userInfo);
+			
+//			System.out.println(contacts[i].toString());
+			System.out.println("--------------------------");
 
-			System.out.println(contacts[i].toString());
 
 			// toString() = 객체에 저장된 정보를 내가 지정한 양식의 문자열로 반환
 			// 그 문자열을 println 으로 출력.
@@ -121,6 +129,7 @@ public class SmartPhone {
 			}
 
 			cnt--;
+			System.out.println(name + " 의 데이터가 삭제되었습니다.");
 
 		}
 
@@ -160,6 +169,8 @@ public class SmartPhone {
 			contacts[index].setAddress(newaddress);
 			contacts[index].setBirthday(newbirthday);
 			contacts[index].setGroup(newgroup);
+			System.out.println(name + " 의 정보가 수정되었습니다.");
+
 		}
 	}
 	//검색한 이름 정보출력
@@ -173,7 +184,8 @@ public class SmartPhone {
 		} else {
 			System.out.println("검색 결과 입니다.");
 			System.out.println("-------------------------");
-			System.out.println(contacts[index].toString());
+			System.out.println(contacts[index].toString());// toString으로 사용할경우
+			//contacts[index].ShowMenu();	//따로 만들어둔 데이터출력메소드를 사용할경우
 		}
 	}
 

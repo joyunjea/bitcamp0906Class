@@ -29,13 +29,13 @@ public class Contact {
 		
 	}
 	//데이터 출력메소드
-		public void ShowMenu() {
+		public void showList() {
 			System.out.println("이름 : " + name);
-			System.out.println("전화 : " + phoneNumber);
-			System.out.println("메일 : " + email);
-			System.out.println("주소 : " + address);
-			System.out.println("생일 : " + birthday);
-			System.out.println("그룹 : " + group);
+//			System.out.println("전화 : " + phoneNumber);
+//			System.out.println("메일 : " + email);
+//			System.out.println("주소 : " + address);
+//			System.out.println("생일 : " + birthday);
+//			System.out.println("그룹 : " + group);
 		}
 
 	//getset
@@ -54,7 +54,6 @@ public class Contact {
 	public void setPhoneNumber(String phoneNumber) {
 		this.phoneNumber = phoneNumber;
 	}
-
 	public String getEmail() {
 		return email;
 	}
@@ -89,8 +88,8 @@ public class Contact {
 	
 	@Override
 	public String toString() {
-		return "Contact [name=" + name + ", phoneNumber=" + phoneNumber + ", email=" + email + ", address=" + address
-				+ ", birthday=" + birthday + ", group=" + group + "]";
+		return "이름= " + name + "\n전화= " + phoneNumber + "\n메일=" + email + "\n주소=" + address
+				+ "\n생일=" + birthday + "\n그룹=" + group;
 	}
 	
 	
