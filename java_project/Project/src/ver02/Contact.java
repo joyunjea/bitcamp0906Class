@@ -1,18 +1,19 @@
-package project;
+package ver02;
 
 import java.util.Scanner;
 
 public class Contact {
-
-	// 변수
+	// 변수 > 생성자 > 메소드순서
+	// 변수 저장정보
+	// 캡슐화 : 외부(다른 인스턴스)에서 변수를 직접 참조하지 못하도록 하는것
 	private String name; // 이름
-	private String phoneNumber; // 번호
+	private String phoneNumber; // 전화번호 : 000-0000-0000
 	private String email; // 이메일
 	private String address; // 주소
-	private String birthday; // 생일
+	private String birthday; // 생일 : 2021-10-22
 	private String group; // 그룹
 
-	// 생성자
+	// 생성자 : 변수들을 초기화 할 때 사용
 	public Contact(String name, String phoneNumber, String email, String address, String birthday, String group) {
 		this.name = name;
 		this.phoneNumber = phoneNumber;
@@ -22,12 +23,19 @@ public class Contact {
 		this.group = group;
 	}
 
+	public Contact(String name, String phoneNumber) {
+//		this.name = name;
+//		this.phoneNumber = phoneNumber;
+		this(name, phoneNumber, null, null, null, null);
+	}
+
 	// 기본 생성자
 	public Contact() {
 	}
 
 	// 정보 출력 메소드
-	public void ShowData() {
+	// 기능 : 위 데이터를 출력하는 기능
+	public void printContact() {
 		System.out.println("이름 : " + name);
 		System.out.println("전화번호 : " + phoneNumber);
 		System.out.println("이메일 : " + email);
@@ -84,46 +92,10 @@ public class Contact {
 		this.group = group;
 	}
 
-	void Update(Contact c) {
-		Scanner scanner = new Scanner(System.in);
-		System.out.println("수정할 항목을 선택해 주십시오");
-		System.out.println("1. 이름  2. 전화번호 3. 이메일 4. 주소 5. 생일 6. 그룹 7. 수정 완료");
-		
-		boolean isContinue = true;
-		while (isContinue) {
-			int userChoice = scanner.nextInt();
-			switch (userChoice) {
-			case 1:
-				System.out.println("새로 저장할 이름을 입력하세요.");
-				c.setName(scanner.nextLine());
-				break;
-			case 2:
-				System.out.println("새로 저장할 전화번호를 입력하세요 ");
-				c.setPhoneNumber(scanner.nextLine());
-				break;
-			case 3:
-				System.out.println("새로 저장할 이메일을 입력하세요 ");
-				c.setEmail(scanner.nextLine());
-				break;
-			case 4:
-				System.out.println("새로 저장할 주소를 입력하세요 ");
-				c.setAddress(scanner.nextLine());
-				break;
-			case 5:
-				System.out.println("새로 저장할 생일 날짜를 입력하세요 ");
-				c.setBirthday(scanner.nextLine());
-				break;
-			case 6:
-				System.out.println("새로 저장할 그룹을 입력하세요 ");
-				c.setGroup(scanner.nextLine());
-				isContinue = false;
-				break;
-			case 7:
-				System.out.println("수정 완료");
-			default:
-			}
-		}
-
+	@Override
+	public String toString() {
+		return " [name=" + name + ", phoneNumber=" + phoneNumber + ", email=" + email + ", address=" + address
+				+ ", birthday=" + birthday + ", group=" + group + "]";
 	}
 
 }
