@@ -1,4 +1,4 @@
-package testver02;
+package project2;
 //이름,전화,메일,주소,생일,그룹
 public class Contact {
 	//변수 저장
