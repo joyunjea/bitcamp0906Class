@@ -8,7 +8,9 @@ public class SmartPhone {
 	private Contact[] contacts;
 	private int cnt;
 	
-	public void SmartPhone() {
+	// 생성자
+	// 생성자는 리턴타입 x
+	public SmartPhone() {
 		contacts = new Contact[10];
 		cnt = 0;
 	}
@@ -114,8 +116,6 @@ public class SmartPhone {
 			String group = sc.nextLine();
 			
 			Contact c = new Contact(name, phoneNumber, email, address, birthday, group);
-			addContact(c);
-			
 			c.setName(name);
 			c.setPhoneNumber(phoneNumber);
 			c.setEmail(email);
