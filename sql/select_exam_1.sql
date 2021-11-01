@@ -4,20 +4,20 @@
 
 
 --1. 덧셈연산자를 이용하여 모든 사원에 대해서 $300의 급여 인상을 계산한 후 사원의 이름, 급여, 인상된 급여를 출력하시오.
-select job, sal, sal + 300
+select job, sal, sal + 300 as addsal
 from emp;
 
 
 --2. 사원의 이름, 급여, 연간 총 수입을 총 수입이 많은 것부터 작은 순으로 출력하시오, 연간 총수입은 월급에 12를 곱한 후 $100의 상여금을 더해서 계산하시오.
-select job, sal, sal*12+100
+select job, sal, sal*12+100 as Income
 from emp 
-order by sal desc;
+order by Income desc;
 
 
 --3. 급여가 2000을 넘는 사원의 이름과 급여를 표현, 급여가 많은 것부터 작은 순으로 출력하시오.
 select ename, sal
 from emp
-where sal >= 2000
+where sal > 2000
 order by sal desc;
 ​
 
