@@ -44,8 +44,13 @@ insert into phoneInfo_basic (idx,fr_name,fr_phonenumber,fr_email) values (5,'라
 
 
 --테스트2
-insert into phoneInfo_univ (idx,fr_u_major,fr_u_year,fr_ref) values (1,'수학과','1학년',3);
-insert into phoneInfo_univ (idx,fr_ref) values (2,'물리과','2학년',2);
-insert into phoneInfo_univ (idx,fr_u_major,fr_u_year,fr_ref) values (4,1);
-insert into phoneInfo_univ (idx,fr_u_major,fr_u_year,fr_ref) values (1,'수학과','1학년',3);
+insert into phoneInfo_univ (idx,fr_u_major,fr_u_year,fr_ref) values (1,'수학과',1,3);
+insert into phoneinfo_univ values (2, '유아교육과',1,2);
+insert into phoneinfo_univ values (4, '기계공학과',2,4);
+insert into phoneInfo_univ (idx,fr_ref) values (5,2);
+
+--테스트3
+insert into phoneInfo_com univ values (1,'삼성',1);
+insert into phoneInfo_com univ values (2,'네이버',3);
+insert into phoneInfo_com (idx,fr_ref) values (3,3);
 
