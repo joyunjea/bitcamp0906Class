@@ -1,6 +1,6 @@
-package project2_1;
+package testver02ex;
 //이름,전화,메일,주소,생일,그룹
-public class Contact {
+public abstract class Contact implements ShowData{
 	//변수 저장
 	private String name;
 	private String phoneNumber;
@@ -28,7 +28,15 @@ public class Contact {
 	public Contact() {
 		
 	}
-
+	//데이터 출력메소드
+		public void showList() {
+			System.out.println("이름 : " + name);
+//			System.out.println("전화 : " + phoneNumber);
+//			System.out.println("메일 : " + email);
+//			System.out.println("주소 : " + address);
+//			System.out.println("생일 : " + birthday);
+//			System.out.println("그룹 : " + group);
+		}
 
 	//getset
 	public String getName() {
@@ -78,21 +86,13 @@ public class Contact {
 		this.group = group;
 	}
 	
-	//데이터 출력메소드
-	public void showList() {
-		System.out.println("이름 : " + name);
-//		System.out.println("전화 : " + phoneNumber);
-//		System.out.println("메일 : " + email);
-//		System.out.println("주소 : " + address);
-//		System.out.println("생일 : " + birthday);
-//		System.out.println("그룹 : " + group);
-	}
 	
 	@Override
 	public String toString() {
-		return "이름= " + name + "\n전화= " + phoneNumber + "\n메일= " + email + "\n주소= " + address
-				+ "\n생일= " + birthday + "\n그룹= " + group;
+		return "이름= " + name + "\n전화= " + phoneNumber + "\n메일=" + email + "\n주소=" + address
+				+ "\n생일=" + birthday + "\n그룹=" + group;
 	}
 	
+	public abstract void ShowData(); 
 	
 }

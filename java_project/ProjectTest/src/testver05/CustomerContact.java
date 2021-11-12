@@ -1,4 +1,4 @@
-package testver03_04;
+package testver05;
 
 public class CustomerContact extends Contact{
     
@@ -57,12 +57,6 @@ public class CustomerContact extends Contact{
     
     @Override
     public void showData() {
-    	// 인터페이스에 원하는 showData 메소드에 목적에 맞게
-    	// 메소드를 "완성"시켜야 함
-    	// 왜냐하면 이 클래스는 Contact 클래스를 상속하고 있으며, Contact 클래스는 ShowData를 구현하고 있고
-    	// 이 CustomerContact 클래스는 추상 클래스가 아닌 "온전한 클래스"이기 때문이다.
-    	
-    	
         System.out.println(this.toString());
     }
 

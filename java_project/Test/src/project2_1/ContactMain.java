@@ -21,7 +21,7 @@ public class ContactMain {
 			int select = Integer.parseInt(sc.nextLine());
 			switch(select) {
 			case 1:
-				sp.insert();
+				sp.insert(select);
 				break;
 			case 2:
 				sp.printAll();

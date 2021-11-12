@@ -1,7 +1,6 @@
 package testver03_04;
 
-import java.awt.geom.Arc2D;
-import java.util.ArrayList;
+
 import java.util.Scanner;
 
 public class SmartPhone {

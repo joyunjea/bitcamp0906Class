@@ -1,4 +1,4 @@
-package testver03_04;
+package testver05;
 //이름,전화,메일,주소,생일,그룹
 public abstract class Contact implements ShowData {
   //변수 저장
@@ -94,9 +94,6 @@ public abstract class Contact implements ShowData {
   }
   
   // 정보를 출력하는 메소드
-  // Contact 클래스는 ShowData 인터페이스를 구현하고 있기 때문에
-  // 반드시 그 인터페이스의 메소드를 가지고 있어야함.
-  // 다만 Contact 는 추상클래스로 만들었기 때문에 그 메소드를 "완성" 시키지 않아도 됨.
   public abstract void showData();
   
 

@@ -15,7 +15,7 @@ public class SmartPhone {
 		cnt = 0;
 	}
 	//등록
-	public void insert() {
+	public void insert(int select) {
 		System.out.println("연락처 등록을 시작합니다");
 		System.out.println("저장할 이름을 입력해주세요>>");
 		String name = sc.nextLine();
@@ -30,8 +30,27 @@ public class SmartPhone {
 		System.out.println("저장할 그룹을 입력해주세요>>");
 		String group = sc.nextLine();
 		
-		Contact c = new Contact(name, phoneNumber, email, address, birthday, group);
-		addContact(c);
+		if(select == 1) {
+			System.out.println("회사이름을 입력하세요. >>");
+			String companyName = sc.nextLine();
+			System.out.println("부서이름을 입력하세요. >>");
+			String divName = sc.nextLine();
+			System.out.println("직급을 입력하세요. >>");
+			String job = sc.nextLine();
+			Contact c = new CompanyContact(name, phoneNumber, email, address, birthday, group, companyName, divName, job);
+			addContact(c);
+			
+		}else {
+			System.out.println("거래처 회사이름을 입력하세요. >>");
+			String companyName = sc.nextLine();
+			System.out.println("거래품목을 입력하세요. >>");
+			String product = sc.nextLine();
+			System.out.println("담당자의 직급을 입력하세요. >>");
+			String job = sc.nextLine();
+			Contact c = new CustomerContact(name, phoneNumber, email, address, birthday, group, companyName, product, job);
+			addContact(c);
+		}
+
 	}
 	//추가
 	public void addContact(Contact contact) {

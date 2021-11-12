@@ -1,11 +1,12 @@
-package ver04;
+package project2_1;
 
-public class CustomerContact extends Contact {
-
+public class CustomerContact extends Contact{
+		
 	private String companyName;
 	private String product;
 	private String job;
-
+	
+	
 	public CustomerContact(String name, String phoneNumber, String email, String address, String birthday, String group,
 			String companyName, String product, String job) {
 		super(name, phoneNumber, email, address, birthday, group);
@@ -14,9 +15,8 @@ public class CustomerContact extends Contact {
 		this.job = job;
 	}
 
-	public CustomerContact(String name, String phoneNumber, String email, String address, String birthday,
-			String group) {
-		super(name, phoneNumber, email, address, birthday, group);
+	public CustomerContact() {
+		
 	}
 
 	public String getCompanyName() {
@@ -44,19 +44,10 @@ public class CustomerContact extends Contact {
 	}
 
 	@Override
-	public void printContact() {
-		super.printContact();
-		System.out.println("거래처 회사이름 : " + companyName);
-		System.out.println("거래 품목 : " + product);
-		System.out.println("담당자 직급 " + job);
-	}
-	
-	@Override 
-	public void printSimpleData() {
-		System.out.println("거래처 : " + getName() + "("+getPhoneNumber()+")");
-		
+	public String toString() {
+		return super.toString()+ "\n거래처 회사이름= " + companyName +"\n거래품목= " + product +"\n직급= " + job;
 	}
 	
 	
-
+	
 }
