@@ -55,7 +55,7 @@ CREATE TABLE Menu (
 -- 메뉴 기본키
 CREATE UNIQUE INDEX K_menu
 	ON menu ( -- 메뉴
-		menuid ASC -- 메뉴번호
+		mid ASC -- 메뉴번호
 	);
 
 -- 메뉴
@@ -63,16 +63,24 @@ ALTER TABLE menu
 	ADD
 		CONSTRAINT PK_menu -- 메뉴 기본키
 		PRIMARY KEY (
-			menuid -- 메뉴번호
+			mid -- 메뉴번호
 		);
-insert into menu values(1,'불고기버거',3500,1);
-insert into menu values(2,'상하이버거',4500,1);
-insert into menu values(3,'감자튀김',2000,2);
-insert into menu values(4,'치즈볼',3000,2);
-insert into menu values(5,'콜라',1000,3);
-insert into menu values(6,'사이다',1000,3);
-insert into menu values(7,'환타',1000,3);
-insert into menu values(8,'아이스크림',1000,2);
-insert into menu values(9,'쉐이크',2000,2);
+insert into menu values(menu_seq.nextVal,'불고기버거',3500,1);
+insert into menu values(menu_seq.nextVal,'상하이버거',4500,1);
+insert into menu values(menu_seq.nextVal,'감자튀김',2000,2);
+insert into menu values(menu_seq.nextVal,'치즈볼',3000,2);
+insert into menu values(menu_seq.nextVal,'콜라',1000,3);
+insert into menu values(menu_seq.nextVal,'사이다',1000,3);
+insert into menu values(menu_seq.nextVal,'환타',1000,3);
+insert into menu values(menu_seq.nextVal,'아이스크림',1000,2);
+insert into menu values(menu_seq.nextVal,'쉐이크',2000,2);
 commit;
 select * from menu ;
+select menu_seq.currval from menu;
+drop sequence menu_seq;
+--시퀀스생성
+create sequence menu_seq
+start with 1
+minvalue 1
+increment by 1
+;
