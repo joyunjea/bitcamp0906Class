@@ -25,6 +25,9 @@ public class ContactMain {
         SmartPhone sp = new SmartPhone();
         Scanner sc = new Scanner(System.in);
         
+        
+        
+        
         while(true) {
             System.out.println("==연락처 관리 프로그램==");
             System.out.println("1. 연락처 등록");
