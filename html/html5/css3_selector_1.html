@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>기본선택자</title>
+    <style>
+
+        /* 선택자 {속성이름: 속성값; 속성이름:속성값;} */
+        *{
+            /* color: red; */
+            /* background-color: aqua; */
+        }
+        h1{
+            background-color: aquamarine;
+        }
+        #title{
+            color: blue;
+            font-style: italic;
+        }
+        .bold{
+            font-weight: 1000;
+        }
+        .bold1{
+            font-weight: bold;
+        }
+            /* 맨 마지막이 우선순위로 색이 red가아닌 violet 으로나게됨 */
+        p{          
+            color: blueviolet;
+        }
+        h1,p,body{
+            margin: 50;
+        }
+        #header{
+            width: 100px;
+            height: 100px;
+            background-color: yellow;
+            /* margin: 10px 20px 30px 40px; top right bottom left */
+            margin:  0 auto;
+        }
+        div#contents{
+            width: 100px;
+            height:100px;
+            background-color: green;
+            /* margin: 10px 20px 30px 40px; top right bottom left */
+            margin:  0 auto;
+        }
+        h1#title{
+            color: white;
+            font-weight: lighter;
+            background-color: black;
+        }
+  
+  </style>
+    <!-- 속성 선택자 -->
+    <style>
+        input[type]{
+            border:5px solid #000000
+        }
+        input[type=text]{
+            background-color: blue;
+        }
+        input[type=password]{
+            background-color: chartreuse;
+        }
+    </style>
+    <!--범위 한정 선택 : 자손, 후손-->
+    <style>
+        #header1 h1{
+            background-color: white;
+        }
+
+        #section h1{
+            color: violet;
+        }
+
+        #header1>h1{
+            color: blue;
+            font-weight: bold;
+        }
+
+        /* 동위선택자 : +, ~ */
+        #head1+h1{
+            color: blue;
+        }
+        #head1~h2{
+            background-color: orange;
+        }
+    </style>
+
+    <!-- 반응선택자 -->
+    <style>
+        /* 마우스 커서가 특정 요소 위로 올라갔을 때 반응 */
+        h3:hover{
+            color:royalblue;
+            background-color: salmon;
+        }
+
+        h3:active{
+            color: blue;
+            background-color: chartreuse;
+        }
+    </style>
+
+    <!-- 상태선택자 -->
+    <style>
+        input:enabled{
+            border : 5px solid #ff0000;
+        }
+
+        input:disabled{
+            background-color: darkgray;
+        }
+        input:focus{
+            background-color: darkorange;
+            border: 5px solid darkturquoise;
+        }
+
+        #article{
+            width: 500px;
+            height: 300px;  
+            overflow: hidden;
+        }
+        input[type=checkbox]:checked+div#article{
+            height: 0px;
+        }
+        /* 체크박스를 숨김 */
+        /* input[type=checkbox]{
+            display: none;
+        } */
+        li:nth-child(2n){
+            background-color: gold;
+            color:#000000;
+        }
+        li:nth-child(2n+1){
+            background-color: aquamarine;
+            color: blue;
+        }
+
+        li:first-child{
+            background-color: deeppink;
+            color:floralwhite;
+
+            border-radius: 40px 0px 0px 40px;
+        }
+        li:last-child{
+            background-color: deeppink;
+            color:floralwhite;
+
+            border-radius: 0px 40px 40px 0px;
+        }
+
+        /* 리스트 태그를 수평방향으로 나열 */
+        ul{
+            overflow: hidden;
+            /* 리스트 스타일 */
+            list-style: none;
+        }
+
+        li{
+            float:left;
+            padding: 10px 30px;
+        }
+
+        #photo{
+            border-radius: 50%;
+            border: 3px solid gray;
+            width:100px;
+        }
+    </style>
+    <!-- 링크선택 -->
+    <style>
+
+        a:link{
+            color:green;
+            text-decoration: none;
+            /* decoration: none은 _언더바를 없애줌 */
+        }
+        a:visited{
+            color:green;
+        }
+        a:hover{
+            color:rgb(0,0,0);
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    test
+    <a>네이버</a>
+
+    <a href="test">네이버</a>
+    <a href="https://www.naver.com">NAVER</a>
+
+
+    <hr>
+    <img id="photo" src="images/mini2.jpg" alt="">
+
+    <hr>
+
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+        <li>7</li>
+
+    </ul>
+
+
+    <hr>
+
+    <label for="dtn"> 기사가리기</label><input id="dtn" type="checkbox">
+    <div id="article">
+        <h1>여기는 지스타 다시 신작! 2년만에 오프라인으로 돌아온 국내 게임 최대쇼</h1>
+        <p>지스타가 다시 오프라인으로 돌아왔다. 작년 코로나19 확산 여파로 온라인 행사만 진행했던 지스타는 올해 오프라인, 온라인 동시에 진행한다.</p>
+    </div>
+
+    <hr>
+    <input> <input disabled>
+
+    <hr>
+    <h3>반응 선택자</h3>
+
+    <hr>
+
+    <div>
+     <h1 id="head1">Header1 -1</h1>
+     <h1>Header1 -2</h1>
+     <h2>Header2 -1</h2>
+     <h2>Header2 -2</h2>
+     <h2>Header2 -3</h2>
+     <h2>Header2 -4</h2>
+     <h2>Header2 -5</h2>
+    </div>
+    <hr>
+
+    <div id="header1">
+        <h1 class="title">제목입니다</h1>
+        <div id="nav">
+            <h1>네비게이션</h1>
+        </div>
+    </div>
+
+    <div id="section">
+        <h1 class="title">제목2입니다</h1>
+            <p>내용이 표현됩니다</p>
+    </div>
+
+    <hr>
+    <input type="text">ghjgjhg<input type="password">
+
+    <hr>
+
+    <div id="header">header</div>
+    <div id="contents">
+        <img src="mini1.jpg">
+    </div>
+    <div id="footer"></div>
+
+    <hr>    
+
+    <h1 id="title">‘매출 제로’ 전기차 스타트업 리비안 시총, 폭스바겐 제쳤다</h1>
+    <p class="bold">미국 전기차 스타트업 리비안이 상장 이후 닷새 거래일 만에 시가총액 기준 전세계에서 
+        세 번째로 비싼 자동차 기업에 등극했다고 CNN방송 등 외신이 16일(현지 시각) 보도했다.</p>
+    <p>2009년 설립 후 공식 매출 실적이 ‘0′인 스타트업이 시총 1400억 달러를 돌파해
+         유럽 최대 자동차 기업인 폭스바겐의 시장가치를 추월한 것이다.</p>
+    <p class="bold1">2009년 설립 후 공식 매출 실적이 ‘0′인 스타트업이 시총 1400억 달러를 돌파해
+         유럽 최대 자동차 기업인 폭스바겐의 시장가치를 추월한 것이다.</p>
+    <h1>footer</h1>
+</body>
+</html>
