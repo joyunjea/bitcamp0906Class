@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        #form{
+            background-color: #ccc;
+        }
+
+        #head1{
+            color: rgb(3, 177, 38);
+            margin: 20px;
+            
+        }
+    </style>
+</head>
+<body>
+    <form id="form">
+        <fieldset>
+            <h1 id="head1">NAVER</h1>
+            <form action="/servlet/aa.do">
+                <table login="login">
+                    <tr>
+                        <td></td>
+                        <td><input type="text" id="userid" placeholder="아이디"></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td><input type="text" id="pw" placeholder="비밀번호"></td>
+                    </tr>
+                    <tr>
+                        <td></td> 
+                        <td id="btn"><button>로그인</button></td>
+                        <input type="submit"/>
+                    </tr>
+                </table>
+            </form>
+        </fieldset>
+    </form>    
+</body>
+</html>
