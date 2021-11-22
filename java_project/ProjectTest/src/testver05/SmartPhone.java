@@ -317,7 +317,7 @@ public class SmartPhone {
 	// 전화번호를 입력받는 메소드
 	private String getPhone() {
 
-		////////////////////////////////////////////////////
+		///////////////////////////////////////////////////
 		System.out.println("전화번호>>");
 		
 		String phoneNumber = getInfo(sc.nextLine());
