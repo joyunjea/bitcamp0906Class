@@ -9,12 +9,11 @@ public class Calculator {
 	//java에서 상수: 변수에 최초 초기화된 값을 바꾸지 못한다!!!
 	final float PI = 3.1415f;
 	final String USER_NAME;	//인스턴스변수, 값이 자동 초기화 
-	
+	String address;
 	//생성자 : 초기화 메소드, 메소드 구조와 유사 반환기능x
 	//클래스이름(){}
 	Calculator(String name){
 		USER_NAME = name;
-		
 	}
 //	 * ① 정수 두 개를 매개변수의 인자로 전달받아 더하기연산 후 출력하는 메소드를 정의 
 	public void plus(int num1, int num2) {

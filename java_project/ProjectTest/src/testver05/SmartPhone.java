@@ -320,7 +320,7 @@ public class SmartPhone {
 		////////////////////////////////////////////////////
 		System.out.println("전화번호>>");
 		
-		String phoneNumber = sc.nextLine();
+		String phoneNumber = getInfo(sc.nextLine());
 		
 		
 		
