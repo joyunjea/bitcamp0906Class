@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>요소의 변형</title>
+    <style>
+         .border{
+            border: 1px solid #333;
+            width: 200px;
+        }
+        /*.movex:hover{
+            transform:translateX(250px);
+        }
+        .movey:hover{
+            transform:translateY(150px);
+        }
+        .movexy:hover{
+            transform:translate(100px, 100px);
+        } */
+
+    </style>
+    <style>
+        /* .scalex:hover{
+            transform: scaleX(2.5);
+        }
+        .scalex:hover{
+            transform: scaleY(2.5);
+        }
+        .scalex:hover{
+            transform: scale(2.5);
+        } */
+    </style>
+    <style>
+        /* .rotate60{
+            transform: rotate(60deg);
+        }
+        .rotate120{
+            transform: rotate(12deg);
+        }
+        .rotate180{
+            transform: rotate(180deg);
+        } */
+    </style>
+    <style>
+        .img{
+            transform : rotate(45deg);
+            border: 1px solid #000;
+
+        }
+        .rotate60>.img{
+            transform-origin: left top;
+        }
+        .rotate120>.img{
+            transform-origin: right top;
+        }
+        .rotate180>.img{
+            transform-origin: right bottom;
+        }
+        .rotate240>.img{
+            transform-origin: left bottom;
+        }
+    </style>
+    <style>
+        #tr1{
+            width: 100px;
+            height: 100px;
+
+            background-color: cornflowerblue;
+            border: 1px solid #000;
+            transition-property: width, height;
+            transition-delay: 1s, 2s;
+            transition-duration: 1s, 2s;
+            transition-timing-function: linear;
+        }
+        #tr1:hover{
+            width:200px;
+            height: 150px;
+        }
+    </style>
+</head>
+<body>
+     <div class="border">
+        <div class="rotate60">
+            <img src="mini1.jpg" class="img">
+        </div>
+     </div>
+     <div class="border">
+        <div class="rotate120">
+            <img src="mini1.jpg" class="img">
+        </div>
+     </div>
+     <div class="border">
+        <div class="rotate180">
+            <img src="mini1.jpg" class="img">
+        </div>
+     </div>
+     <div class="border">
+        <div class="rotate240">
+            <img src="mini1.jpg" class="img">
+        </div>
+     </div>
+</body>
+</html>

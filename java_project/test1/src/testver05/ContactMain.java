@@ -42,7 +42,7 @@ public class ContactMain {
 				} catch (NumberFormatException e1) {
 					System.out.println("숫자만 입력해 주세요");
 				} catch (MisInfo e1) {
-				
+					System.out.println("올바른 메뉴를 입력하세요");
 				}
 			}
 			//////////////////////////////////////////////////////////////

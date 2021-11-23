@@ -119,6 +119,7 @@
  }
  a {
     text-decoration: none;
+    
  }
  #send_area_makeadd a:hover{
     text-decoration: underline;
@@ -158,9 +159,3 @@ li{
     padding-top: 15px;
     padding-left: 15px;
 }
-
-footer_all_area footer의 전체영역
-footer_area     footer의 한줄띄운 모든영역
-language_area   footer의 언어기능만 속한영역
-li_area         footer의 기능들의 영역
-meta_area       footer의 meta2021의 윗줄과 아랫줄을 포함한영역
