@@ -28,7 +28,13 @@
         //JSON 형식의 문자열 -> javascript 객체로 변경
         var newObj = JSON.parse(newStr);
 
-        console.log(typeof newObj, newObj.name, newObj.author);
+        console.log(
+          typeof newObj,
+          newObj.name,
+          newObj.price,
+          newObj.publisher,
+          newObj.author
+        );
       };
     </script>
   </head>
