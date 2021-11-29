@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Phone Manager</title>
+    <link rel="stylesheet" href="css/main.css">
+    <script>
+        window.onload = function(){
+            var form = document.querySelector("#form");
+
+    form.onsubmit = function () {
+        console.log('form 태그에서 submit 버튼클릭 -> onsubmit 이벤트 발생');
+
+        // uid 캐스팅 -> 공백 문자 확인 후 공백 이면 -> return false;
+        var uid = document.getElementById('uid');
+        console.log(typeof (uid.value), uid.value);
+        var pw = document.querySelector('#pw');
+
+        if (uid.value.length == 0) {
+            alert('아이디를 입력하시오~~~~');
+            // 입력 포커스를 uid 입력 폼으로 이동
+            uid.focus();
+            return false;
+        }
+
+        if (pw.value.length == 0) {
+            alert('비밀번호는 필수 입력 해야합니다.');
+            pw.focus();
+            return false;
+        }
+        }
+    }
+    </script>
+  </head>
+  <body>
+    <div id="header">
+        <h1>Member Manager</h1>   
+
+        <div id="update_area">
+            <h3 id="update_h3">데이터 수정</h3>
+            <ul>
+                <li><a>아이디(이메일)</a></li>
+                <li><a>비밀번호</a></li>
+                <li><a>이름</a></li>
+                </ul>
+             <div id="insert_area">
+                <form id="form" onsubmit="return submitProc()">
+                    <input type="text" id="insert_uid" name="uid" value="tester">
+                    <input type="password" id="insert_pw" name="password">
+                    <input type="text" id="insert_uname" name="uname">
+                    <input type="submit" id="insert_send" value="등록">
+                  </form>
+             </div>
+      
+    </div>
+      <hr />
+      <h3>회원등록</h3>
+    </div id>
+    <div id="container">
+        <div id="group1">
+            <ul>
+            <li><a>아이디(이메일)</a></li>
+            <li><a>비밀번호</a></li>
+            <li><a>이름</a></li>
+            </ul>
+         <div id="insert_area">
+            <form id="form" onsubmit="return submitProc()">
+                <input type="text" id="insert_uid" name="uid" value="tester">
+                <input type="password" id="insert_pw" name="password">
+                <input type="text" id="insert_uname" name="uname">
+                <input type="submit" id="insert_send" value="등록">
+              </form>
+         </div>
+        </div>
+        
+        
+        
+        <div id="list_area">
+            <hr>
+            <h3>회원리스트</h3>
+        </div>
+
+    </div>
+  </body>
+</html>
