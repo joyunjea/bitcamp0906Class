@@ -51,3 +51,26 @@ div.msg {
   height: 20px;
   color: red;
 }
+
+/* ***************************************  */
+#memberList {
+  padding: 10px 40px;
+  border-bottom: 1px solid #aaa;
+}
+#memberList {
+  margin: 15px 0;
+}
+#memberList > table {
+  margin: 15px 0;
+
+  width: 1000px;
+
+  border-collapse: collapse;
+  /* 서로 이웃하는 테이블이나 셀의 테두리선을 겹쳐서 표현  */
+}
+#memberList > table td,
+#memberList > table th {
+  border: 1px solid #aaa;
+  padding: 10px;
+  text-align: center;
+}

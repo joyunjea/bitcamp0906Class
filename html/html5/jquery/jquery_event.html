@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      h1 {
+        border: 1px solid #aaa;
+      }
+      h1:hover {
+        cursor: pointer;
+      }
+      .mover {
+        background-color: aquamarine;
+        color: blue;
+      }
+      div {
+        width: 50%;
+        border: 1px solid #aaa;
+        border-radius: 5px;
+        padding: 10px;
+      }
+    </style>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        // //이벤트 적용: 특정 엘리먼트 캐스팅 -> 이벤트를 연결
+        // $("h1").on("click", function () {
+        //   //this : 클릭 이벤트가 발생한 객체를 가르킨다!
+        //   $(this).html(function (index, html) {
+        //     //return (html 형식의 문자열);
+        //     return html + "+";
+        //   });
+        // });
+
+        $("h1").click(function () {
+          //on 을 사용하는것보다 간편함
+          $(this).html(function (index, html) {
+            return html + "+";
+          });
+        });
+
+        // $("h1").on({     //마우스를 올리면 색이 변함
+        //   mouseenter: function () {
+        //     $(this).addClass("mover");
+        //   },
+        //   mouseleave: function () {
+        //     $(this).removeClass("mover");
+        //   },
+        // });
+
+        $("h1").hover(
+          function () {
+            $(this).addClass("mover");
+          },
+          function () {
+            $(this).removeClass("mover");
+            //이벤트 연결 삭제
+            //$(this).off();
+            $(this).off("mouseleave");
+          }
+        );
+
+        $("div").click(function () {
+          //이벤트가 발생한 div-> this
+          //$('h2',this) - > 이벤트가 발생한 엘리먼트 (div) 안의 위치한 h2
+          var h3Str = $("h2", this).text();
+          var pStr = $("p", this).text();
+
+          alert(h2Str + "\n" + pStr);
+          console.log(e);
+        });
+
+        $('h3').click(function(){
+            $(this).html(function(index, html){
+                return html+'+';
+            });
+
+            //trigger : 이벤트를 자동 실행
+            setInterval(function(){
+                $('h3').trigger('click');
+            }, 1000);
+
+            $('a').click(function(e){
+                console.log('a tag click');
+
+            });
+            $('h4').click(function(){
+                var length = $('h4').length;
+                var targetHtml = $(this).html();
+
+                $('#warp').append('<h4>'+length+' - '+targetHtml+'<h4>');
+
+            });
+      });
+    </script>
+  </head>
+  <body>
+    <div id="wrap">
+      <h4>HEADER</h4>
+    </div>
+
+    <a href="https://naver.com">네이버</a>
+    <h3>Clict :</h3>
+    <div>
+      <h2>header-0</h2>
+      <p>paragraph-0</p>
+    </div>
+    <div>
+      <h2>header-1</h2>
+      <p>paragraph-1</p>
+    </div>
+    <div>
+      <h2>header-2</h2>
+      <p>paragraph-2</p>
+    </div>
+    <h1>Click - 0</h1>
+    <h1>Click - 1</h1>
+    <h1>Click - 2</h1>
+  </body>
+</html>
