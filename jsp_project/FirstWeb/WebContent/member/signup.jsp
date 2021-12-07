@@ -7,10 +7,8 @@
 <title>회원정보</title>
 </head>
 <body>
-	<h1>회원가입</h1>
 	<%
 		request.setCharacterEncoding("utf-8");
-		String[] interests = request.getParameterValues("interest");
 	%>
 	
 	아이디 :<%=request.getParameter("userid")%>
