@@ -21,17 +21,16 @@
 	<br>
 	 성별 :<%=request.getParameter("gender")%>
 	<br>
-	<%	
-		String[] interest = request.getParameterValues("interest");
-		if(interest == null) {
-			out.println("Interest : 관심사가 없습니다.");
-		} else {
-			for(int i=0; i<interest.length; i++) {
-				out.println("관심사 : " + interest[i] );
-			}
+	<%
+	String[] interests = request.getParameterValues("interest");
+	if(interests != null) {
+		for(int i=0; i<interests.length; i++) {
+			out.println("관심사 : " + interests[i] + " <br>");
 		}
-	%>
-	<br>
+	} else {
+		out.println("관심사 : 선택된 관심사가 없습니다. <br>");
+	}
+%>
 	생년 : <%= request.getParameter("byear") %>
 
 </body>
