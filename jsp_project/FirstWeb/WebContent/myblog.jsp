@@ -140,12 +140,12 @@ footer{
     <div id="main_wrap">
       <!-- header 시작-->
       <header>
-              <%@ include file="frame/header.jsp" %>
+              <%@ include file="myblog/header.jsp" %>
 
       </header>
       <!--header종료-->
       <!-- 네비게이션 시작-->
-           <%@ include file="frame/nav.jsp" %>
+           <%@ include file="myblog/nav.jsp" %>
      
       <!-- 네비게이션 종료-->
 
@@ -185,13 +185,13 @@ footer{
         </section>
         <!-- 게시물 종료-->
         <!-- aside 시작-->
-            <%@ include file="frame/aside.jsp" %>
+            <%@ include file="myblog/aside.jsp" %>
       
         <!-- aside 종료-->
       </div>
       <!-- Contents 영역 종료-->
       <!-- footer 시작-->
-      <%@ include file="frame/footer.jsp" %>
+      <%@ include file="myblog/footer.jsp" %>
       
       <!-- footer 종료-->
     </div>
