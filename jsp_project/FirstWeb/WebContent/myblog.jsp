@@ -139,10 +139,10 @@ footer{
     -->
     <div id="main_wrap">
       <!-- header 시작-->
-      <header>
+      
               <%@ include file="myblog/header.jsp" %>
 
-      </header>
+     
       <!--header종료-->
       <!-- 네비게이션 시작-->
            <%@ include file="myblog/nav.jsp" %>
