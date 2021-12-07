@@ -20,7 +20,7 @@ public class LoginServlet extends HttpServlet {
 		
 		//response.getWriter().append("Served at: ").append(request.getContextPath());
 		
-		// request : 사용장의 요청 데이터 처리
+		// request : 사용자의 요청 데이터 처리
 		// response : 사용자에게 응답할 데이터 처리
 		request.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html; charset=UTF-8");
