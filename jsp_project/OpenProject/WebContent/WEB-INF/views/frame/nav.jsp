@@ -17,6 +17,9 @@
 			</c:if>
 			
 			<li><a href="${pageContext.request.contextPath}/guestbook/write.do">방명록 글쓰기</a></li>
+			<!-- /guestbook/list.do 로 요청을 보낼시  command.properties에 정의한 서블릿 클래스(GuestBookListCommandImpl 클래스) 
+			가 처리함 -->
+			<li><a href="${pageContext.request.contextPath}/guestbook/list.do">방명록 보기(리스트)</a></li>
 			
 		</ul>
 	</nav>

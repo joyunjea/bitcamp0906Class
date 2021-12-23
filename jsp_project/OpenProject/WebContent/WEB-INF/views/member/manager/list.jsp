@@ -116,7 +116,7 @@
 			<c:if test="${listView.pageTotalCount > 0}">
 			
 			<c:forEach begin="1" end="${listView.pageTotalCount}" var="pnum">
-				<a href="list.do?p=${pnum}" class="${listView.currentPage eq pnum ? 'curpage': ''}">${pnum}</a>  
+				<a href="${pageContext.request.contextPath}/guestbook/list.do?p=${pnum}" class="${listView.currentPage eq pnum ? 'curpage': ''}">${pnum}</a>  
 			</c:forEach>
 			
 			</c:if>
