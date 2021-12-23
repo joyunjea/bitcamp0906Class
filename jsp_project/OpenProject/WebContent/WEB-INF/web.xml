@@ -3,7 +3,7 @@
 	xmlns="http://xmlns.jcp.org/xml/ns/javaee"
 	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
 	id="WebApp_ID" version="3.1">
-	<display-name>JDBC</display-name>
+	<display-name>OpenProject</display-name>
 	<welcome-file-list>
 		<welcome-file>index.html</welcome-file>
 		<welcome-file>index.htm</welcome-file>
@@ -13,8 +13,28 @@
 		<welcome-file>default.jsp</welcome-file>
 	</welcome-file-list>
 
+	<!-- Servlet 설정 -->
 	<servlet>
-		<servlet-name>Loader</servlet-name>
+		<servlet-name>FrontController</servlet-name>
+		<servlet-class>controller.FrontController</servlet-class>
+		<!-- 파라미터 설정 -->
+		<init-param>
+			<param-name>configPath</param-name>
+			<param-value>/WEB-INF/command.propertise</param-value>
+		</init-param>
+		<!-- Tomcat 실행 후 한번 서블릿 실행 -->
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+
+	<!-- 서블릿 URL Mapping -->
+	<servlet-mapping>
+		<servlet-name>FrontController</servlet-name>
+		<url-pattern>*.do</url-pattern>
+	</servlet-mapping>
+
+	<!-- 데이터 베이스 드라이버 로드 -->
+	<servlet>
+		<servlet-name>DriverLoader</servlet-name>
 		<servlet-class>jdbc.DriverLoader</servlet-class>
 		<init-param>
 			<param-name>driver</param-name>
@@ -22,23 +42,8 @@
 		</init-param>
 		<load-on-startup>1</load-on-startup>
 	</servlet>
-	
-	<servlet>
-		<servlet-name>FrontController</servlet-name>
-		<servlet-class>controller.FrontController</servlet-class>
-		
-		<init-param>
-			<param-name>configPath</param-name>
-			<param-value>/WEB-INF/command.propertise</param-value>
-		</init-param>
-		
-		<load-on-startup>1</load-on-startup>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>FrontController</servlet-name>
-		<url-pattern>*.do</url-pattern>
-	</servlet-mapping>
-	
+
+	<!-- 한글 처리를 위한 EncodingFilter 설정 -->
 	<filter>
 		<filter-name>EncodingFilter</filter-name>
 		<filter-class>filter.EncodingFilter</filter-class>
@@ -48,16 +53,28 @@
 		</init-param>
 	</filter>
 	
+	<!-- 필터가 적용될 경로 지정 -->
 	<filter-mapping>
 		<filter-name>EncodingFilter</filter-name>
 		<url-pattern>/*</url-pattern>
 	</filter-mapping>
 	
-	
-	
-	
-	
-	
-	
+	<!-- 로그인 체크 필터 -->
+	<filter>
+		<filter-name>LoginCheckFilter</filter-name>
+		<filter-class>filter.LoginCheckFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>LoginCheckFilter</filter-name>
+		<!-- /op/member/my/mypage.do -->
+		<url-pattern>/member/my/*</url-pattern>
+		<!-- 방명록도 회원제로 운영되므로 이 필터를 거쳐 먼저 회원인지 아닌지를 판단
+		회원일 경우 글쓰기 폼으로, 아닐경우 로그인페이지로 이동 -->
+		<url-pattern>/guestbook/*</url-pattern>
+	</filter-mapping>
+
+
+
+
 
 </web-app>

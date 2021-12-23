@@ -33,11 +33,11 @@ public class DeptRegCommandImpl implements Command{
 						System.out.println(request.getMethod());
 						
 						// post 방식에서 한글 처리
-						try {
-							request.setCharacterEncoding("utf-8");
-						} catch (UnsupportedEncodingException e) {
-							e.printStackTrace();
-						}
+//						try {
+//							request.setCharacterEncoding("utf-8");
+//						} catch (UnsupportedEncodingException e) {
+//							e.printStackTrace();
+//						}
 						
 						// 사용자가 입력한 데이터를 받고
 						String deptno = request.getParameter("deptno");
