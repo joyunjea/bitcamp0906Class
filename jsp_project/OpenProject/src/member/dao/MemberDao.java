@@ -61,7 +61,6 @@ public class MemberDao {
 
 		try {
 			pstmt = conn.prepareStatement(sql);
-		
 			pstmt.setString(1, userId);
 			pstmt.setString(2, pw);
 
@@ -250,6 +249,35 @@ public class MemberDao {
 		} finally {
 			JdbcUtil.close(pstmt);
 		}
+		
+		return resultCnt;
+	}
+
+	public int selectByIdCount(Connection conn, String userId) throws SQLException {
+		
+		int resultCnt = 0;
+		
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		
+		String sql = "select count(*) from member where userid=?";
+		
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, userId);
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				resultCnt = rs.getInt(1);
+			}
+		} finally {
+			JdbcUtil.close(rs);
+			JdbcUtil.close(pstmt);
+		}
+		
+		
+		
+		
 		
 		return resultCnt;
 	}

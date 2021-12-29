@@ -155,6 +155,9 @@ public class FrontController extends HttpServlet  {
 		
 		// 5.  view 페이지를 지정(선택) -> 포워딩
 		RequestDispatcher dispatcher = request.getRequestDispatcher(viewPage);
+		
+		
+		// request 나 response 객체의 내용을 해당 viewPage 경로안의 jsp 와 공유하는 역할
 		dispatcher.forward(request, response);
 		
 		

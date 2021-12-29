@@ -8,6 +8,7 @@ public class PageInfo {
 	private String content;
 	
 	
+	
 	public PageInfo(int idx, String subject, String username, String regdate, String content) {
 		
 		this.idx = idx;

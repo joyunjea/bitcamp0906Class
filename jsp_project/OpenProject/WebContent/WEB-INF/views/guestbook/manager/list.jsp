@@ -15,6 +15,62 @@ color: black;
 a:hover{
 text-decoration: underline;
 }
+#content>div {
+	padding: 15px;
+}
+#content>table {
+	border: 0;
+	border-collapse: collapse;
+	
+	width: 900px;
+}
+#content>table td, #content>table th {
+	border: 1px solid #aaa;
+	padding: 10px;
+	
+	text-align: center;
+}
+#listInfo {
+	border : 1px solid #aaa;
+	width : 870px;
+}
+#paging {
+	overflow: hidden;
+}
+#paging>a {
+	display: block;
+	
+	width: 30px;
+	height: 30px;
+	
+	border: 1px solid #aaa;
+	
+	text-align: center;
+	line-height: 30px;
+	
+	float : left;
+	
+	margin-right: 5px;
+	
+	text-decoration: none;
+}
+#paging>a:hover {
+	background-color: #ff0;
+	color: #00f;
+}
+.curpage {
+	background-color: #333;
+	color: #fff;
+}
+img{
+	height: 30px;
+    border: 2px solid #aaa;
+    border-radius: 50%;
+}
+.mright{
+margin-right: 20px;
+vertical-align: middle;
+}
 </style>
 </head>
 
@@ -59,7 +115,7 @@ GuestBookListView 객체에서 데이터만 꺼내서 출력해주면 됨
 			<c:forEach items="${listView.list}" var="gb">
 			<tr>
 				<td>${gb.idx}</td>
-				<td><a href="${pageContext.request.contextPath}/~~~.do?파라미터(gb.게시글의고유번호)">${gb.subject}</a></td>
+				<td><a href="${pageContext.request.contextPath}/guestbook/content.do?guestbookidx=${gb.idx}">${gb.subject}</a></td>
 				<td>${gb.username}</td>
 				<td>${gb.regdate}</td>
 			</tr>
@@ -73,7 +129,7 @@ GuestBookListView 객체에서 데이터만 꺼내서 출력해주면 됨
 			<c:if test="${listView.pageTotalCount > 0}">
 			
 			<c:forEach begin="1" end="${listView.pageTotalCount}" var="pnum">
-				<a href="list.do?pageNum=${pnum}" class="${listView.currentPage eq pnum ? 'curpage': ''}">${pnum}</a>  
+				<a href="${pageContext.request.contextPath}/guestbook/list.do?pageNum=${pnum}" class="${listView.currentPage eq pnum ? 'curpage': ''}">${pnum}</a>  
 			</c:forEach>
 			
 			</c:if> 	

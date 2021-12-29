@@ -19,7 +19,19 @@
 
 #################################################################
 
-# GuestBook insert
+# GuestBook Write
 /guestbook/write.do=guestbook.command.GuestBookWriteCommandImpl
+/guestbook/writeAjax.do=guestbook.command.GuestBookWriteAjaxCommandImpl
 # GuestBook List
 /guestbook/list.do=guestbook.command.GuestBookListCommandImpl
+# GuestBook Content
+/guestbook/content.do=guestbook.command.GuestBookContentImpl
+
+#Reply Write
+/guestbook/reply/write.do=guestbook.command.GuestBookReplyWriteCommandImpl
+#응답 데이터가 html : 댓글 항목을 표현
+/guestbook/reply/write2.do=guestbook.command.GuestBookReplyWriteCommandImpl2
+#응답 데이터가 JSON
+/guestbook/reply/write3.do=guestbook.command.GuestBookReplyWriteCommandImpl3
+
+
