@@ -1,0 +1,21 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.bitcamp</groupId>
+	<artifactId>firstapp</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>FirstApp</name>
+	<description>처음 만든 maven project</description>
+
+	<dependencies>
+		<!-- https://mvnrepository.com/artifact/org.springframework/spring-context -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context</artifactId>
+			<version>3.1.1.RELEASE</version>
+			<!--dependencies는 id만 설정했을때 다른 라이브러리들과의 의존관계가 있으면 maven이 의존관계에 있는 라이브러리도 자동으로 추가된다. -->
+		</dependency>
+	
+	</dependencies>
+</project>
