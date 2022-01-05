@@ -19,7 +19,11 @@
 		<li><a href="${pageContext.request.contextPath}/hello">hello</a></li>
 		<li><a href="${pageContext.request.contextPath}/form">form</a></li>
 		<li><a href="${pageContext.request.contextPath}/param">param</a></li>
-				
+		<li><a href="${pageContext.request.contextPath}/member/reg">/member/reg</a></li>
+		<li><a href="${pageContext.request.contextPath}/order/order">/order/order</a></li>
+		<li><a href="${pageContext.request.contextPath}/cookie/make">/cookie/make</a></li>
+		<li><a href="${pageContext.request.contextPath}/header/check">/header/check</a></li>
+		
 	</ul>
 		
 </body>
