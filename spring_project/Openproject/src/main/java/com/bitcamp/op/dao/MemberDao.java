@@ -8,14 +8,11 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.springframework.stereotype.Repository;
+import org.springframework.jdbc.support.JdbcUtils;
 
-import com.bitcamp.op.jdbc.JdbcUtil;
 import com.bitcamp.op.member.domain.Member;
 import com.bitcamp.op.member.domain.MemberRegRequest;
 
-
-@Repository
 public class MemberDao {
 
 	// Connection 객체, Member 객체를 전달 받아 데이터베이스에 데이터 입력

@@ -34,7 +34,14 @@ public class MemberRegController {
 			HttpServletRequest request
 			) throws IllegalStateException, IOException, SQLException {
 		//System.out.println(regRequest);
+		
+		
+		
 		model.addAttribute("result", regService.insertMember(regRequest, request));
+		
+		System.out.println("@Controller: idx => " + regRequest.getIdx());
+		// view 페이지의 idx
+		
 	}
 
 }
