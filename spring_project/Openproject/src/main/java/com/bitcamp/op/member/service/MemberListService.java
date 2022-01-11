@@ -1,16 +1,18 @@
 package com.bitcamp.op.member.service;
 
-import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.List;
 
+import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.bitcamp.op.dao.JdbcTemplateMemberDao;
-import com.bitcamp.op.dao.MemberDao;
+import com.bitcamp.op.member.dao.JdbcTemplateMemberDao;
+import com.bitcamp.op.member.dao.MemberDao;
+import com.bitcamp.op.member.dao.mybatisMemberDao;
 import com.bitcamp.op.member.domain.ListPageView;
 import com.bitcamp.op.member.domain.Member;
+import com.bitcamp.op.member.domain.SearchParams;
 
 @Service
 public class MemberListService {
@@ -18,9 +20,16 @@ public class MemberListService {
 	//@Autowired
 	//private MemberDao dao;
 	
-	@Autowired
-	private JdbcTemplateMemberDao dao;
+	//@Autowired
+	//private JdbcTemplateMemberDao dao;
 	
+	//@Autowired
+	//private mybatisMemberDao dao; 
+	
+	private MemberDao dao;
+	
+	@Autowired
+	private SqlSessionTemplate template;
 	
 	
 	// 페이지 당 표현할 회원의 수
@@ -29,6 +38,9 @@ public class MemberListService {
 	public ListPageView getPageView(int pageNum) throws SQLException {
 		
 		ListPageView view = null;
+		
+		dao = template.getMapper(MemberDao.class);
+		
 		
 		//Connection conn = null;
 		
@@ -44,7 +56,9 @@ public class MemberListService {
 			
 			int index = (pageNum-1)*COUNT_PER_PAGE;
 			//List<Member> list = dao.selectList(conn, index, COUNT_PER_PAGE);
-			List<Member> list = dao.selectList(index, COUNT_PER_PAGE);
+			SearchParams params = new SearchParams(index, COUNT_PER_PAGE, null, null);
+			//List<Member> list = dao.selectList(params);
+			List<Member> list = dao.selectList(COUNT_PER_PAGE, index);
 			
 			
 			view = new ListPageView(totalCount, pageNum, COUNT_PER_PAGE, list);

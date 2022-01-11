@@ -2,16 +2,17 @@ package com.bitcamp.op.member.service;
 
 import java.io.File;
 import java.io.IOException;
-import java.sql.Connection;
 import java.sql.SQLException;
 
 import javax.servlet.http.HttpServletRequest;
 
+import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.bitcamp.op.dao.JdbcTemplateMemberDao;
-import com.bitcamp.op.dao.MemberDao;
+import com.bitcamp.op.member.dao.JdbcTemplateMemberDao;
+import com.bitcamp.op.member.dao.MemberDao;
+import com.bitcamp.op.member.dao.mybatisMemberDao;
 import com.bitcamp.op.member.domain.MemberRegRequest;
 
 @Service
@@ -20,11 +21,18 @@ public class MemberRegService {
 	//@Autowired
 	//private MemberDao dao;
 	
+	//@Autowired
+	//private JdbcTemplateMemberDao dao;
+	
+	//@Autowired
+	//private mybatisMemberDao dao;
+	
+	private MemberDao dao;
+	
 	@Autowired
-	private JdbcTemplateMemberDao dao;
+	private SqlSessionTemplate template;
 	
 	
-
 	public int insertMember(MemberRegRequest regRequest, HttpServletRequest request)
 			throws IllegalStateException, IOException, SQLException {
 
@@ -57,9 +65,12 @@ public class MemberRegService {
 			
 			System.out.println("idx => " + regRequest.getIdx());
 			
+			dao = template.getMapper(MemberDao.class);
+			
 
 			//resultCnt = dao.insertMember(regRequest);			
-			resultCnt = dao.insert(regRequest);
+			//resultCnt = dao.insert(regRequest);
+			resultCnt = dao.insertMember(regRequest);
 			
 			
 			System.out.println("idx => " + regRequest.getIdx());

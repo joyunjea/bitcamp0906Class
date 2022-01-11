@@ -1,4 +1,4 @@
-package com.bitcamp.op.dao;
+package com.bitcamp.op.member.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -47,6 +47,7 @@ public class JdbcTemplateMemberDao {
 	public List<Member> selectList(int index, int count){
 		String sql = "select * from member order by regdate desc limit ?, ?";
 		return template.query(sql, new MemberRowMapper(), index, count);
+		
 	}
 	
 	
