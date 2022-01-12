@@ -28,7 +28,7 @@ public class MemberRegController {
 	}
 	
 	@PostMapping
-	public void memberReg(
+	public String memberReg(
 			MemberRegRequest regRequest,
 			Model model,
 			HttpServletRequest request
@@ -41,7 +41,7 @@ public class MemberRegController {
 	
 		System.out.println("@Controller: idx => " + regRequest.getIdx());
 		// view 페이지의 idx
-		
+		return "member/reg2";
 	}
 
 }

@@ -23,7 +23,7 @@ public class ListPageView {
 
 	private void calTotalCount() {
 		pageTotalCount = totalCount / countPerPage;
-		pageTotalCount = totalCount%countPerPage>0 ? pageTotalCount++ : pageTotalCount; // 삼항연산자
+		pageTotalCount = totalCount%countPerPage>0 ? ++pageTotalCount : pageTotalCount; // 삼항연산자
 	}
 
 

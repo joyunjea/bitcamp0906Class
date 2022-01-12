@@ -83,7 +83,7 @@
 			formData.append('photo', file);
 			
 			$.ajax({
-				url : 'reg2.do',
+				url : 'reg',
 				type : 'POST',
 				data : formData,
 				enctype : 'multipart/form-data',

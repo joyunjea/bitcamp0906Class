@@ -2,6 +2,7 @@ package com.bitcamp.op.member.domain;
 
 public class SearchParams {
 
+	private int p;	//페이지
 	private int index;
 	private int count;
 	private String searchType;
@@ -48,6 +49,24 @@ public class SearchParams {
 	public void setKeyword(String keyword) {
 		this.keyword = keyword;
 	}
+
+	public int getP() {
+		return p;
+	}
+
+	public void setP(int p) {
+		this.p = p;
+	}
+
+	@Override
+	public String toString() {
+		return "SearchParams [p=" + p + ", index=" + index + ", count=" + count + ", searchType=" + searchType
+				+ ", keyword=" + keyword + "]";
+	}
+	
+	
+	
+	
 	
 	
 	
