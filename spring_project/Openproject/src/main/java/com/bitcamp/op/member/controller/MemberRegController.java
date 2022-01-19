@@ -16,7 +16,7 @@ import com.bitcamp.op.member.domain.MemberRegRequest;
 import com.bitcamp.op.member.service.MemberRegService;
 
 @Controller
-@RequestMapping("/member/reg")
+@RequestMapping("/member/reg") // http://localhost:8080/op/member/reg
 public class MemberRegController {
 	
 	@Autowired
@@ -28,7 +28,7 @@ public class MemberRegController {
 	}
 	
 	@PostMapping
-	public String memberReg(
+	public void memberReg(
 			MemberRegRequest regRequest,
 			Model model,
 			HttpServletRequest request
@@ -38,10 +38,10 @@ public class MemberRegController {
 		
 		
 		model.addAttribute("result", regService.insertMember(regRequest, request));
-	
+		
 		System.out.println("@Controller: idx => " + regRequest.getIdx());
-		// view 페이지의 idx
-		return "member/reg2";
+		// view 페이지의 idx로 사용해서 redirect 처리 가능
+		
 	}
 
 }

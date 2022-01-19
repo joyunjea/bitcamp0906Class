@@ -6,9 +6,10 @@ import javax.servlet.http.HttpSession;
 
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import com.bitcamp.op.member.dao.JdbcTemplateMemberDao;
+import com.bitcamp.op. member.dao.JdbcTemplateMemberDao;
 import com.bitcamp.op.member.dao.MemberDao;
 import com.bitcamp.op.member.dao.mybatisMemberDao;
 import com.bitcamp.op.member.domain.Member;
@@ -32,6 +33,10 @@ public class MemberLoginService {
 	@Autowired
 	private SqlSessionTemplate template;
 	
+	@Autowired
+	private BCryptPasswordEncoder encoder;
+	
+	
 
 	public String login(MemberLoginRequest loginRequest, HttpSession session, HttpServletResponse response)
 			throws Exception {
@@ -48,9 +53,13 @@ public class MemberLoginService {
 			//member = dao.selectByIdPw(conn, loginRequest.getUserid(), loginRequest.getPw());
 			//member = dao.selectByIdPw(loginRequest.getUserid(), loginRequest.getPw());
 			//member = dao.selectByIdPw(loginRequest.getLoginParams());
-			member = dao.selectByIdPw(loginRequest.getUserid(), loginRequest.getPw());
+			//member = dao.selectByIdPw(loginRequest.getUserid(), loginRequest.getPw());
+			member = dao.selectById(loginRequest.getUserid());
 
 			if (member == null) {
+				throw new LoginInvalidException("아이디 또는 비밀번호가 틀립니다.");
+			} else if(encoder.matches(loginRequest.getPw(), member.getPassword()) ) {
+				// 사용자가 입력한 비밀번호와 Member 객체가 가지고 있는 비밀번호를 확인
 				throw new LoginInvalidException("아이디 또는 비밀번호가 틀립니다.");
 			}
 

@@ -3,12 +3,11 @@
 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.bitcamp.op.member.dao.mapper.MemberMapper">
+<mapper namespace="/src/main/webapp/WEB-INF/mybatismapper/MemberMapper.xml">
 
 	<select id="selectByIdPw" 
-			resultType="com.bitcamp.op.member.domain.Member"
-			parameterType="com.bitcamp.op.member.domain.LoginParams">
-		select * from member where userid=#{uid} and password=#{pw}
+			resultType="com.bitcamp.op.member.domain.Member">
+		select * from member where userid=#{arg0} and password=#{arg1}
 	</select>
 	
 	<!-- int => 별칭 => Integer  -->

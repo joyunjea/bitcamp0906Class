@@ -25,7 +25,7 @@
 	<bean id="sqlSessionFactory" 
 				class="org.mybatis.spring.SqlSessionFactoryBean"
 				p:dataSource-ref="dataSource"
-				p:mapperLocations="classpath:com/bitcamp/op/member/dao/mapper/*.xml"
+				p:mapperLocations="WEB-INF/mybatismapper/*.xml"
 	/>
 	
 	<bean id="sqlSession"
