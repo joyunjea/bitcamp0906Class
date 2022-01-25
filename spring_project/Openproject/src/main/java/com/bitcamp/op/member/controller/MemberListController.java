@@ -2,6 +2,8 @@ package com.bitcamp.op.member.controller;
 
 import java.sql.SQLException;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -21,12 +23,14 @@ public class MemberListController {
 	public void getListPage(
 			/* @RequestParam(value = "p", defaultValue = "1") int pageNumber, */
 			SearchParams params,
-			Model model
+			Model model , HttpServletRequest request
 			) throws SQLException {
 		
 		System.out.println(params);
 		
-		model.addAttribute("listView", listService.getPageView(params));
+		
+		//model.addAttribute("listView", listService.getPageView(params));
+		request.setAttribute("listView", listService.getPageView(params));
 		
 	}
 	
