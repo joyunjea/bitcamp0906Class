@@ -61,11 +61,11 @@ public class Member {
 		this.regDate = regDate;
 	}
 	
-	// 비밀번호 변경 메소드
+	// 비밀번호 변경 메소드1
 	public void changePassword(String oldPw, String newPw) throws IdPasswordNotMatchingException {
 		
 		if(!this.password.equals(oldPw)) {
-			throw new IdPasswordNotMatchingException("비빌번호 일치하지 않습니다.");
+			throw new IdPasswordNotMatchingException("비빌번호 일치하지 않음.");
 		}
 		
 		this.password = newPw;
