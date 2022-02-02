@@ -46,7 +46,7 @@ public class GuestBookListCommandImpl implements Command {
 		// GuestBookListView 객체를 가져오는 일은 service 패키지 내의 GuestBookListService 클래스가 담당함.
 		
 		
-		///////////////////////////////////// GuestBookListView 객체를 가져오는 코드
+		// GuestBookListView 객체를 가져오는 코드
 		
 		
 		
