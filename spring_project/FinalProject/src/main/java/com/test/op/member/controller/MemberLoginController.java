@@ -36,7 +36,7 @@ public class MemberLoginController {
 			//System.out.println(loginRequest);
 			
 			// service의 메소드는 view의 정보를 반환
-			// 실패 했을 때 view
+			//// 실패 했을 때 view
 			// 성공 했을 때 view : redirect
 			
 			return loginService.login(loginRequest, session, response);
