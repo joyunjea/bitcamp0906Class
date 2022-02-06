@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-Hello
+WEB-INF/AA
 </body>
 </html>
 
