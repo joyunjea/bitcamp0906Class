@@ -36,8 +36,7 @@ public class GuestBookListCommandImpl implements Command {
 		// 리스트 페이지 내에서 2번 혹은 n번 페이지를 보려고 페이지 번호를 눌렀을 때
 		// >> pageNumber 에는 그 페이지 번호가 할당됨
 		
-		// 리스트 기져와야함
-		// 출력에 필요한 정보들은?
+		// 리스트 기져와야함 출력에 필요한 정보들은?
 		// 전체 페이지 수
 		// 전체 게시글 수
 		// 현재 페이지 번호
